@@ -1,0 +1,10 @@
+#Test with IRIS dataset
+library(psych)
+data("iris")
+summary(iris)
+str(iris)
+head(iris)
+head(iris[60:70,])
+pairs(iris)
+pairs.default(iris)
+pairs.panels(iris)
