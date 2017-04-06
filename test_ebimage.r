@@ -4,13 +4,13 @@ options(EBImage.display = "raster")
 
 ## ----readImage-----------------------------------------------------------
 img = readImage("/home/ros/Bilder/17_Extern/Export/R/2017_02_03_19_49_45_L.tif")
-img = readImage("/home/ros/Bilder/17_Extern/Export/R/2015_10_11_11_03_02_87.tif")
+img = readImage("/home/ros/Bilder/17_Extern/Export/DT/2017_02_03/voll/2017_02_03_18_23_24_L_voll.jpg")
 hist(img)
 display(img)
 
 
 #analyses image part
-img_crop = img[2800:3200, 1800:2500,]
+img_crop = img[1800:3000, 1400:2500,]
 img_crop
 display(img_crop)
 hist(img_crop)
@@ -59,3 +59,4 @@ img_hard = img_crop + img_high
 display(img_hard)
 
 display(combine(img_crop,img_hard,img_flo, img_high, img_light, img_dark), all=FALSE, method = "browser")
+# 

@@ -20,5 +20,5 @@ if(nterms <= 0) {
   print("Fibonacci sequence:")
   for(i in 0:(nterms-1)) {
     print(recurse_fibonacci(i))
-  }20
+  }
 }
