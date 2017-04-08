@@ -1,19 +1,48 @@
 ## ----library, message=FALSE----------------------------------------------
 library("EBImage")
 options(EBImage.display = "raster")
-
+library(colorspace)
 ## ----readImage-----------------------------------------------------------
 img = readImage("/home/ros/Bilder/17_Extern/Export/R/2017_02_03_19_49_45_L.tif")
-img = readImage("/home/ros/Bilder/17_Extern/Export/R/2015_10_11_11_03_02_87.tif")
+img = readImage("/home/ros/Bilder/17_Extern/Export/R/2015_10_11_11_03_02_87_01.tif")
 hist(img)
 display(img)
 
 
 #analyses image part
-img_crop = img[2800:3200, 1800:2500,]
+img_crop = img[2900:2999, 1900:1999,]
 img_crop
 display(img_crop)
 hist(img_crop)
+hist.default(img_crop[,,2], 
+     main="Hist of Image Part", 
+     xlab="Values", 
+     border="red", 
+     col="red",
+     #xlim=c(0.305,0.31),
+     xlim=c(0.0,0.99),
+     #ylim = c(0,5),
+     las=0, 
+     breaks=1000)
+print(img_crop)
+
+img_crop_data = imageData(img_crop)
+str(img_crop)
+str(img_crop_data)
+cr = img_crop_data[,,1]
+cg = img_crop_data[,,2]
+cb = img_crop_data[,,3]
+imrgb = RGB(cr,cg,cb)
+str(cr)
+display(cr)
+hsvimg = rgb2hsv(cr[,0:2])
+display(cr[,0:20])
+
+hist(cr[,0:10])
+plot(cr)
+plot(img_crop_data[,,0:1])
+
+lab = as(img_crop_data,"LAB")
 
 # get some masks
 img_dark = img_crop < 0.3

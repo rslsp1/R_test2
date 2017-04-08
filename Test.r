@@ -33,9 +33,10 @@ pairs.panels(dummy)
 fm = lm(y ~ x, data=dummy)
 summary(fm)
 plot(fm)
-pairs.panels(fm)
+#pairs.panels(fm)
 a
 1/a
 
 k = 1:10
 l = k * c(1,0) +1
+
