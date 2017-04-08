@@ -32,17 +32,26 @@ str(img_crop_data)
 cr = img_crop_data[,,1]
 cg = img_crop_data[,,2]
 cb = img_crop_data[,,3]
-imrgb = RGB(cr,cg,cb)
+imrgb = RGB(as.vector(cr),as.vector(cg),as.vector(cb))
+plot(imrgb)
+imlab = as(imrgb,"LAB")
+plot(imlab)
+str(imlab)
+imlab_l = imlab
+str(imlab_l)
+
 str(cr)
 display(cr)
 hsvimg = rgb2hsv(cr[,0:2])
 display(cr[,0:20])
-
+dim(cr)
+hist(crv)
+crv = as.vector(cr)
+str(crv)
 hist(cr[,0:10])
 plot(cr)
 plot(img_crop_data[,,0:1])
 
-lab = as(img_crop_data,"LAB")
 
 # get some masks
 img_dark = img_crop < 0.3
