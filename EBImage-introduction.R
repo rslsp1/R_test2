@@ -194,6 +194,7 @@ display( img_affine )
 ## ----makeBrush, fig.width=6, fig.height=6, dev=.dev----------------------
 w = makeBrush(size = 31, shape = 'gaussian', sigma = 5)
 plot(w[(nrow(w)+1)/2, ], ylab = "w", xlab = "", cex = 0.7, type = "l")
+str(w)
 
 ## ----lopass, fig.width=dim(img)[1L]/.dpi, fig.height=dim(img)[2L]/.dpi, dpi=.dpi/2----
 img_flo = filter2(img, w)
