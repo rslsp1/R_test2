@@ -1,7 +1,7 @@
 #rgb matrix operations
 
 #pixel value in RBG
-px_rgb = c(50, 80, 120)
+px_rgb = c(50/255, 80/255, 120/255)
 
 #matrix to convert RGB to XYZ from high dynamic range images page 35
 mRGB2XYZ = matrix(data = c(
