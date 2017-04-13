@@ -17,3 +17,10 @@ x
 y
 str(x)
 print(x)
+
+
+px_rgb = RGB(50/255,80/255,120/255)
+px_rgb
+
+px_lab = as(px_rgb,"LAB")
+px_lab
