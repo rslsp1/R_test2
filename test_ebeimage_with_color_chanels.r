@@ -11,6 +11,7 @@ img = readImage("/home/ros/Bilder/17_Extern/Export/R/2015_10_11_11_03_02_87_01.t
 
 #analyses image part
 img_crop = img[2900:2999, 1900:1999,]
+img_crop = readImage(system.file("images", "sample-color.png", package="EBImage"))
 #img_crop
 display(img_crop)
 hist(img_crop)

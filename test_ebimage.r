@@ -1,3 +1,8 @@
+## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("EBImage")
+
+
 ## ----library, message=FALSE----------------------------------------------
 library("EBImage")
 options(EBImage.display = "raster")
@@ -6,6 +11,7 @@ library(colorspace)
 #img = readImage("/home/ros/Bilder/17_Extern/Export/R/2017_02_03_19_49_45_L.tif")
 img = readImage("/home/ros/Bilder/17_Extern/Export/R/2015_10_11_11_03_02_87_01.tif")
 #img = readImage("/home/ros/Bilder/17_Extern/Export/DT/2017_02_03/voll/2017_02_03_18_23_24_L_voll.jpg")
+img = readImage(system.file("images", "sample-color.png", package="EBImage"))
 hist(img)
 display(img)
 
